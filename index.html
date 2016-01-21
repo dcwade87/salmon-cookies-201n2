@@ -5,49 +5,62 @@
     <title></title>
   </head>
   <body>
-    <script>
 
+
+
+
+
+    <script>
+    var hoursOpen = [10, 11, 12, 1, 2, 3, 4, 5]
+
+    var pikeArr = []
     var pikePlace = {
       minCust: 17,
       maxCust: 88,
       cookieSales: 5.2,
     }
-
-    var seaTac = {
-      minCust: 6,
-      maxCust: 24,
-      cookieSales: 1.2,
-    }
-
-    var southcenter = {
-      minCust: 11,
-      maxCust: 38,
-      cookieSales: 1.9,
-    }
-
-    var bellevueSquare = {
-      minCust: 20,
-      maxCust: 48,
-      cookieSales: 3.3,
-    }
-
-    var alki = {
-      minCust: 3,
-      maxCust: 24,
-      cookieSales: 2.6
-    }
-
-    pikePlace.randomCustomer = function (17, 88) {
-      return Math.random() * (88 - 17) + 17;
+    pikePlace.randomCustomer = function (minCust, maxCust) {
+      return Math.random() * (minCust - maxCust) + maxCust;
     };
 
+    pikeArr.push(pikePlace.randomCustomer(pikePlace.minCust, pikePlace.maxCust));
+    console.log(pikeArr)
 
-    var pikeArr = []
-    var seaTacArr = []
-    var southcenterArr = []
-    var bellevueSquareArr = []
-    var alkiArr = []
+    for (customer in hoursOpen) {
+    var liEl = document.createElement("li");
+    liEl.textContent = hoursOpen[customer];
+    var nestedUlEl = document.createElement('ul');
+    }
 
+    // var seaTacArr = []
+    // var seaTac = {
+    //   minCust: 6,
+    //   maxCust: 24,
+    //   cookieSales: 1.2,
+    // }
+    //
+    // var southcenterArr = []
+    // var southcenter = {
+    //   minCust: 11,
+    //   maxCust: 38,
+    //   cookieSales: 1.9,
+    // }
+    //
+    // var bellevueSquareArr = []
+    // var bellevueSquare = {
+    //   minCust: 20,
+    //   maxCust: 48,
+    //   cookieSales: 3.3,
+    // }
+    //
+    // var alkiArr = []
+    // var alki = {
+    //   minCust: 3,
+    //   maxCust: 24,
+    //   cookieSales: 2.6
+    // }
+    //
+    //
 
     </script>
   </body>
