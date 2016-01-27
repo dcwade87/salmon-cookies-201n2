@@ -3,7 +3,7 @@ var seaTac = new CookieStand ("SeaTac", 6, 24, 1.2);
 var southcenter = new CookieStand ("Southcenter", 11, 38, 1.9);
 var bellevueSquare = new CookieStand ("Bellevue Square", 20, 48, 3.3);
 var alki = new CookieStand ("Alki", 3, 24, 2.6);
-var hoursOpen = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
+var hoursOpen = ["10AM: ", "11AM: ", "12PM: ", "1PM: ", "2PM: ", "3PM: ", "4PM: ", "5PM: "];
 
 function CookieStand(storeLocation, minCust, maxCust, cookieSales) {
   this.storeLocation = storeLocation;
@@ -29,20 +29,20 @@ CookieStand.prototype.hourlySales = function () {
 CookieStand.prototype.render = function() {
   this.hourlySales();
   var printCookie = document.getElementById('cookieList');
-  var cookieSection = document.createElement('section');
+  var cookieSection = document.createElement('table');
   printCookie.appendChild(cookieSection);
-  var ulEl = document.createElement("ul");
+  var tabRow = document.createElement("tr");
 
   for (var i = 0; i < hoursOpen.length; i++) {
-  var liEl = document.createElement("li");
-  liEl.textContent = hoursOpen[i] + ": " + this.cookieArr[i];
-  ulEl.appendChild(liEl);
+  var tabDat = document.createElement("td");
+  tabDat.textContent = hoursOpen[i] + this.cookieArr[i];
+  tabRow.appendChild(tabDat);
   }
-  var liElTotal = document.createElement("li");
-  liElTotal.textContent = "Daily Sales: " + this.dailySales;
-  ulEl.appendChild(liElTotal);
-  cookieSection.textContent = this.storeLocation;
-  cookieSection.appendChild(ulEl);
+  var tabDatTotal = document.createElement("td");
+  tabDatTotal.textContent = "Daily Sales: " + this.dailySales;
+  tabRow.appendChild(tabDatTotal);
+  cookieSection.textContent = this.storeLocation + ":";
+  cookieSection.appendChild(tabRow);
   }
 
 pikePlace.render();
