@@ -1,7 +1,7 @@
 var pikePlace = new CookieStand ("Pike Place", 17, 88, 5.2);
 var seaTac = new CookieStand ("SeaTac", 6, 24, 1.2);
 var southcenter = new CookieStand ("Southcenter", 11, 38, 1.9);
-var bellevueSquare = new CookieStand ("Bellevue Square", 8, 20, 48, 3.3);
+var bellevueSquare = new CookieStand ("Bellevue Square", 20, 48, 3.3);
 var alki = new CookieStand ("Alki", 3, 24, 2.6);
 var hoursOpen = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
 
