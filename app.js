@@ -20,29 +20,29 @@ CookieStand.prototype.randomCustomer = function() {
 
 CookieStand.prototype.hourlySales = function () {
   for (var i = 0; i< hoursOpen.length; i++) {
-    var random = Math.floor(this.randomCustomer() * this.cookieSales);
-    this.cookieArr.push(random);
-    this.dailySales += random;
+  var random = Math.floor(this.randomCustomer() * this.cookieSales);
+  this.cookieArr.push(random);
+  this.dailySales += random;
   }
 };
 
 CookieStand.prototype.render = function() {
-    this.hourlySales();
-    var printCookie = document.getElementById('cookieList');
-    var cookieSection = document.createElement('section');
-    printCookie.appendChild(cookieSection);
-    var ulEl = document.createElement("ul");
+  this.hourlySales();
+  var printCookie = document.getElementById('cookieList');
+  var cookieSection = document.createElement('section');
+  printCookie.appendChild(cookieSection);
+  var ulEl = document.createElement("ul");
 
-    for (var i = 0; i < hoursOpen.length; i++) {
-      var liEl = document.createElement("li");
-      liEl.textContent = hoursOpen[i] + ": " + this.cookieArr[i];
-      ulEl.appendChild(liEl);
-    }
-    var liElTotal = document.createElement("li");
-    liElTotal.textContent = "Daily Sales: " + this.dailySales;
-    ulEl.appendChild(liElTotal);
-    cookieSection.textContent = this.storeLocation;
-    cookieSection.appendChild(ulEl);
+  for (var i = 0; i < hoursOpen.length; i++) {
+  var liEl = document.createElement("li");
+  liEl.textContent = hoursOpen[i] + ": " + this.cookieArr[i];
+  ulEl.appendChild(liEl);
+  }
+  var liElTotal = document.createElement("li");
+  liElTotal.textContent = "Daily Sales: " + this.dailySales;
+  ulEl.appendChild(liElTotal);
+  cookieSection.textContent = this.storeLocation;
+  cookieSection.appendChild(ulEl);
   }
 
 pikePlace.render();
