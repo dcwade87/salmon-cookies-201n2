@@ -49,4 +49,4 @@ pikePlace.render();
 seaTac.render();
 southcenter.render();
 bellevueSquare.render();
-alki.render();
+alki.render(); 
