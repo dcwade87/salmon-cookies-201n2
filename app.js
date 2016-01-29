@@ -1,8 +1,8 @@
-var pikePlace = new CookieStand ("Pike Place", 17, 88, 5.2);
-var seaTac = new CookieStand ("SeaTac", 6, 24, 1.2);
-var southcenter = new CookieStand ("Southcenter", 11, 38, 1.9);
-var bellevueSquare = new CookieStand ("Bellevue Square", 20, 48, 3.3);
-var alki = new CookieStand ("Alki", 3, 24, 2.6);
+var pikePlace = new CookieStand ("Pike Place:", 17, 88, 5.2);
+var seaTac = new CookieStand ("SeaTac:", 6, 24, 1.2);
+var southcenter = new CookieStand ("Southcenter:", 11, 38, 1.9);
+var bellevueSquare = new CookieStand ("Bellevue Square:", 20, 48, 3.3);
+var alki = new CookieStand ("Alki:", 3, 24, 2.6);
 var hoursOpen = ["10AM: ", "11AM: ", "12PM: ", "1PM: ", "2PM: ", "3PM: ", "4PM: ", "5PM: "];
 
 function CookieStand(storeLocation, minCust, maxCust, cookieSales) {
@@ -28,8 +28,8 @@ CookieStand.prototype.hourlySales = function () {
 
 CookieStand.prototype.render = function() {
   this.hourlySales();
-  var printCookie = document.getElementById('cookieList');
-  var cookieSection = document.createElement('table');
+  var printCookie = document.getElementById("cookieList");
+  var cookieSection = document.createElement("table");
   printCookie.appendChild(cookieSection);
   var tabRow = document.createElement("tr");
 
@@ -41,12 +41,26 @@ CookieStand.prototype.render = function() {
   var tabDatTotal = document.createElement("td");
   tabDatTotal.textContent = "Daily Sales: " + this.dailySales;
   tabRow.appendChild(tabDatTotal);
-  cookieSection.textContent = this.storeLocation + ":";
+  cookieSection.textContent = this.storeLocation;
   cookieSection.appendChild(tabRow);
   }
+
+
+  userData.addEventListener("submit", function() {
+    event.preventDefault();
+    var storeLocation = document.getElementById('name').value + ":";
+    var minCust = document.getElementById('min').value;
+    var maxCust = document.getElementById('max').value;
+    var cookieSales = document.getElementById('average').value;
+    var newStore = new CookieStand(storeLocation, minCust, maxCust, cookieSales);
+    newStore.hourlySales();
+    newStore.render(); + ":";
+    document.getElementById('userData').reset();
+  });
+
 
 pikePlace.render();
 seaTac.render();
 southcenter.render();
 bellevueSquare.render();
-alki.render(); 
+alki.render();
