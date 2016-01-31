@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+.borders{
+  background: #E87394;
+  text-align: center;
+  padding: 3%;
+}
+
+.headers{
+  font-family: Lato, sans-serif;;
+  font-weight: bold;
+  margin: 0px;
+  text-align: center;
+}
+
+h1{
+  font-size: 40px;
+  color: #E87394;
+}
+
+h2{
+  font-size: 32px;
+  color: #85CAFF;
+}
+
+h3{
+  font-size: 24px;
+  color: #FFCA8B;
+}
+
+a{
+  color: #9D7FFF;
+}
+
+a:hover{
+    color: #26D4AE;
+}
+
+p{
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: black;
+}
+
+div{
+  margin: 25px;
+  padding: 25px;
+  height: 20px;
+  width: 20px;
+  float: left;
+}
+
+#palette{
+  margin-left: 25%;
+}
+
+#salmon{
+  background-color: #E87394;
+}
+
+#blue{
+  background-color: #85CAFF;
+}
+
+#gold{
+  background-color: #FFCA8B;
+}
+
+#green{
+  background-color: #26D4AE;
+}
+
+#purple{
+  background-color: #9D7FFF;
+}
